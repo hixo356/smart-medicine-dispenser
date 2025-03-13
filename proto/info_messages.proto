@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+message container {
+    int32 ID = 1;
+    int32 dose = 2;
+    int32 quantity = 3;
+    repeated int64 time = 4;
+}
+
+message schedule {
+    repeated container containers = 1;
+}
+
+message quantity_message {
+    int32 conatiner_number = 1;
+    int32 quantity_in_dispenser = 2;
+}
+
+// Powiadomienia o wzięciu leków:
+//             1. Leki wzięte                            --- wysyłane kiedy pacjent wezmie lek w ciągu 10 minut
+//             2. Opóźnienie we wzięciu leku             --- wysyłane kiedy pacjent nie wezmie leku w ciągu 10 minut 
+//             3. Leki wzięte z opóźnieniem              --- wysyłane kiedy pacjent wezmie lek pomiędzy 10 a 20 minut
+//             4. Leki nie wzięte - wymagana interwencja --- wysyłane kiedy pacjent nie wezmie leku w pomiędzy 10 a 20 minut
+//             5. Leki wzięte ze znacznym opóźnieniem    --- wysyłane kiedy pacjent wezmie leki w czasie powyżej 20 minut
+
+enum NotificationType {
+    TAKE_MEDICATION = 0;
+    MEDICATION_TAKEN = 1;                       
+    DELAY_IN_TAKING_MEDICATION = 2;             
+    MEDICATION_TAKEN_WITH_DELAY = 3;            
+    MEDICATION_NOT_TAKEN_INTERVENTION = 4;      
+    MEDICATION_TAKEN_SIGNIFICANT_DELAY = 5;
+    NO_CUP_UNDER_DISPENSER = 6;
+}
+
+message medication_notification {
+    NotificationType notification_id = 1;
+}

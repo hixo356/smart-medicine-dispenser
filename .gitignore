@@ -1,0 +1,10 @@
+.pio
+.vscode
+.lib
+.test
+/src/main.cpp
+/src/audio_player
+/src/component_configuration/cup_sensor.cpp
+/src/component_configuration/servo.cpp
+/src/wav_file
+/src/wifi_connection
