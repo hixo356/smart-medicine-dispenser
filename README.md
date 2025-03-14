@@ -9,12 +9,11 @@ Group project developed for [KPZ](https://kpz.pwr.edu.pl/) on WUST's Faculty of 
 
 -------------------------
 ![Device](images/device.png)
+
 Final device
 
 -------------------------
-<video width="600" controls>
-  <source src="images/video.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/43c22ac6-a81a-402b-a94a-8bc3534b5174
 
 How the mechanism works
 
